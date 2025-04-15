@@ -1,0 +1,246 @@
+:root {
+  --primary: #8C52FF;
+  --primary-light: #DDCBFF;
+  --secondary: #F887C1;
+  --tertiary: #215331;
+  --dark-purple: #5E17EB;
+  --background: #f7f9fc;
+  --white: #ffffff;
+  --grey-100: #f8f9fa;
+  --grey-200: #e9ecef;
+  --grey-300: #dee2e6;
+  --grey-500: #adb5bd;
+  --grey-700: #495057;
+  --grey-900: #212529;
+}
+
+body {
+  font-family: 'Futura PT', 'Futura', Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--grey-900);
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-header {
+  background-color: var(--primary);
+  padding: 1rem 2rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.App-header h1 {
+  font-family: 'TT Ramillas', 'Georgia', serif;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.content-container {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+}
+
+h2 {
+  font-family: 'TT Ramillas', 'Georgia', serif;
+  color: var(--dark-purple);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+h3 {
+  color: var(--dark-purple);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Upload Container */
+.upload-container {
+  border: 2px dashed var(--primary-light);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.upload-container:hover {
+  border-color: var(--primary);
+  background-color: rgba(140, 82, 255, 0.05);
+}
+
+.upload-container input[type="file"] {
+  margin: 1rem 0;
+}
+
+/* Form Styles */
+.episode-details-form {
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--grey-700);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--grey-300);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(140, 82, 255, 0.2);
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.transcribe-button {
+  background-color: var(--primary);
+  color: white;
+  width: 100%;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.transcribe-button:hover {
+  background-color: var(--dark-purple);
+}
+
+.transcribe-button:disabled {
+  background-color: var(--grey-500);
+  cursor: not-allowed;
+}
+
+.generate-button {
+  background-color: var(--tertiary);
+  color: white;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.generate-button:hover {
+  background-color: #194126;
+}
+
+/* Transcription Results */
+.results-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--primary-light);
+}
+
+.transcription-result {
+  background-color: var(--grey-100);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.full-transcription {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--grey-300);
+  border-radius: 6px;
+  background-color: white;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+details summary {
+  cursor: pointer;
+  color: var(--primary);
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+/* Loading indicator */
+.loading-section {
+  text-align: center;
+  padding: 2rem;
+  color: var(--grey-700);
+}
+
+.loading-spinner {
+  border: 4px solid var(--primary-light);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 1rem auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-light);
+  padding: 1rem;
+  text-align: center;
+  color: var(--dark-purple);
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+  
+  .content-container {
+    padding: 1.5rem;
+  }
+}
